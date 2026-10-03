@@ -1,0 +1,2518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Creative Mindz | AI Creative Content & Visual Storytelling</title>
+
+  <meta
+    name="description"
+    content="Creative Mindz helps brands turn products, ideas, and brands into engaging visual stories using AI-powered visuals, animation, voiceovers, and creative storytelling."
+  />
+
+  <style>
+    /* =========================================================
+       CREATIVE MINDZ
+       AI CREATIVE CONTENT & VISUAL STORYTELLING
+       ========================================================= */
+
+    :root {
+      --bg: #07090d;
+      --bg-soft: #0b0f16;
+      --card: #10151e;
+      --card-hover: #151c27;
+
+      --blue: #2378ff;
+      --blue-light: #65a7ff;
+
+      --gold: #e7b84b;
+      --gold-light: #f4d47a;
+
+      --white: #ffffff;
+      --text: #e9edf5;
+      --muted: #98a2b3;
+      --muted-dark: #687386;
+
+      --border: rgba(255, 255, 255, 0.09);
+
+      --max-width: 1180px;
+      --radius: 20px;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    video {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       NAVBAR
+       ========================================================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      background: rgba(7, 9, 13, 0.86);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .brand-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+    }
+
+    .brand-name span {
+      color: var(--blue-light);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #cbd2df;
+      font-size: 0.92rem;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      padding: 10px 17px;
+      border: 1px solid rgba(231, 184, 75, 0.45);
+      border-radius: 999px;
+      color: var(--gold-light) !important;
+    }
+
+    .nav-cta:hover {
+      background: rgba(231, 184, 75, 0.1);
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 150px 0 100px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border-radius: 50%;
+
+      background: rgba(35, 120, 255, 0.11);
+      filter: blur(100px);
+
+      top: -250px;
+      right: -200px;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+
+      background: rgba(231, 184, 75, 0.055);
+      filter: blur(100px);
+
+      bottom: -250px;
+      left: -180px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 920px;
+    }
+
+    .hero-logo {
+      width: 105px;
+      height: 105px;
+      object-fit: contain;
+      border-radius: 20px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 60px rgba(35, 120, 255, 0.12);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      margin-bottom: 25px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6.7rem);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      max-width: 1000px;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 .blue {
+      color: var(--blue-light);
+    }
+
+    .hero h1 .gold {
+      color: var(--gold);
+    }
+
+    .hero-description {
+      max-width: 730px;
+      font-size: 1.15rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 38px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 14px 23px;
+      border-radius: 999px;
+
+      font-weight: 700;
+      font-size: 0.92rem;
+
+      transition:
+        transform var(--transition),
+        background var(--transition),
+        border var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 12px 35px rgba(35, 120, 255, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: #3d89ff;
+      box-shadow: 0 15px 40px rgba(35, 120, 255, 0.3);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.025);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-note {
+      margin-top: 28px;
+      color: #667085;
+      font-size: 0.82rem;
+    }
+
+    /* =========================================================
+       GENERAL SECTIONS
+       ========================================================= */
+
+    section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 55px;
+    }
+
+    .section-label {
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* =========================================================
+       SERVICES
+       ========================================================= */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      position: relative;
+      padding: 30px;
+      min-height: 250px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.045),
+          rgba(255, 255, 255, 0.015)
+        );
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      transition:
+        transform var(--transition),
+        border var(--transition),
+        background var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(35, 120, 255, 0.35);
+      background: var(--card-hover);
+    }
+
+    .service-number {
+      color: var(--blue-light);
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 35px;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .service-card h4 {
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* =========================================================
+       PROJECTS
+       ========================================================= */
+
+    .projects {
+      background: #090c11;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.045),
+          rgba(255, 255, 255, 0.012)
+        );
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      overflow: hidden;
+
+      transition:
+        transform var(--transition),
+        border var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(35, 120, 255, 0.35);
+    }
+
+    .project-media {
+      position: relative;
+      background: #05070a;
+      overflow: hidden;
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-media img {
+      transform: scale(1.025);
+    }
+
+    .project-media video {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      background: #05070a;
+    }
+
+    .media-label {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+
+      padding: 7px 11px;
+
+      background: rgba(7, 9, 13, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+
+      backdrop-filter: blur(8px);
+    }
+
+    .project-content {
+      padding: 30px;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .project-type {
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .project-status {
+      padding: 6px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 999px;
+
+      color: #8993a3;
+      font-size: 0.65rem;
+      white-space: nowrap;
+    }
+
+    .project-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    .project-content h4 {
+      color: var(--blue-light);
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .project-tools {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-tools span {
+      font-size: 0.7rem;
+      color: #b9c1ce;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 6px 9px;
+      border-radius: 7px;
+    }
+
+    .project-card.full {
+      grid-column: span 2;
+    }
+
+    /* =========================================================
+       EBOOK
+       ========================================================= */
+
+    .ebook-section {
+      background: #080b10;
+    }
+
+    .ebook-card {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 55px;
+      align-items: center;
+
+      padding: 40px;
+
+      background:
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(231, 184, 75, 0.09),
+          transparent 30%
+        ),
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.045),
+          rgba(255, 255, 255, 0.012)
+        );
+
+      border: 1px solid var(--border);
+      border-radius: 24px;
+    }
+
+    .ebook-cover {
+      width: 100%;
+      max-width: 330px;
+      margin: 0 auto;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .ebook-content h3 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+    }
+
+    .ebook-content p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .ebook-credit {
+      color: var(--gold-light) !important;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .selar-btn {
+      margin-top: 15px;
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-logo {
+      width: 230px;
+      height: 230px;
+      object-fit: contain;
+      border-radius: 30px;
+      margin: 0 auto;
+
+      border: 1px solid rgba(35, 120, 255, 0.25);
+
+      background: rgba(255, 255, 255, 0.02);
+
+      box-shadow:
+        0 0 70px rgba(35, 120, 255, 0.08);
+    }
+
+    .about-content h2 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .about-content h2 span {
+      color: var(--gold);
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin-bottom: 17px;
+      max-width: 650px;
+    }
+
+    .about-signature {
+      margin-top: 28px;
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .about-signature span {
+      color: var(--blue-light);
+    }
+
+    /* =========================================================
+       PROCESS
+       ========================================================= */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .process-step {
+      padding: 25px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .process-step-number {
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-bottom: 35px;
+    }
+
+    .process-step h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* =========================================================
+       FEEDBACK
+       ========================================================= */
+
+    .feedback-section {
+      background: #090c11;
+    }
+
+    .feedback-note {
+      max-width: 650px;
+      margin-bottom: 35px;
+      color: var(--muted);
+    }
+
+    .feedback-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feedback-card {
+      padding: 28px;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.045),
+          rgba(255, 255, 255, 0.012)
+        );
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+    }
+
+    .feedback-card p {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .feedback-author {
+      color: var(--muted-dark);
+      font-size: 0.75rem;
+    }
+
+    .feedback-author strong {
+      color: var(--blue-light);
+    }
+
+    .feedback-form-box {
+      margin-top: 30px;
+      padding: 30px;
+
+      border: 1px dashed rgba(231, 184, 75, 0.3);
+      border-radius: var(--radius);
+
+      background: rgba(231, 184, 75, 0.025);
+    }
+
+    .feedback-form-box h3 {
+      margin-bottom: 8px;
+    }
+
+    .feedback-form-box p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    /* =========================================================
+       FAQ
+       ========================================================= */
+
+    .faq-list {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 24px 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      background: none;
+      border: none;
+
+      color: var(--white);
+      text-align: left;
+      font-weight: 700;
+      font-size: 1rem;
+
+      cursor: pointer;
+    }
+
+    .faq-icon {
+      color: var(--gold);
+      font-size: 1.4rem;
+      transition: transform var(--transition);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-answer p {
+      color: var(--muted);
+      padding: 0 45px 24px 0;
+      font-size: 0.9rem;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* =========================================================
+       CTA
+       ========================================================= */
+
+    .cta {
+      padding: 130px 0;
+    }
+
+    .cta-box {
+      padding: 75px 50px;
+      text-align: center;
+
+      border: 1px solid rgba(35, 120, 255, 0.22);
+      border-radius: 28px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(35, 120, 255, 0.15),
+          transparent 50%
+        ),
+        #0c1119;
+    }
+
+    .cta-box .section-label {
+      margin-bottom: 20px;
+    }
+
+    .cta-box h2 {
+      max-width: 750px;
+      margin: 0 auto 20px;
+
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .cta-box p {
+      max-width: 600px;
+      margin: 0 auto 35px;
+
+      color: var(--muted);
+    }
+
+    .whatsapp-btn {
+      background: #1d8f50;
+      color: white;
+      box-shadow: 0 12px 35px rgba(29, 143, 80, 0.15);
+    }
+
+    .whatsapp-btn:hover {
+      background: #25a85e;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font-weight: 800;
+    }
+
+    .footer-brand span {
+      color: var(--blue-light);
+    }
+
+    .footer-text {
+      color: #697386;
+      font-size: 0.78rem;
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feedback-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-logo {
+        width: 190px;
+        height: 190px;
+      }
+
+      .ebook-card {
+        grid-template-columns: 1fr;
+      }
+
+      .ebook-cover {
+        max-width: 280px;
+      }
+    }
+
+    @media (max-width: 850px) {
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 25px 4%;
+
+        background: rgba(7, 9, 13, 0.97);
+        border-bottom: 1px solid var(--border);
+
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px 0;
+      }
+
+      .nav-cta {
+        display: inline-block !important;
+        padding: 10px 15px !important;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.full {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .navbar {
+        min-height: 70px;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand-name {
+        font-size: 1rem;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      .hero-logo {
+        width: 85px;
+        height: 85px;
+      }
+
+      .hero h1 {
+        font-size: 3.15rem;
+        letter-spacing: -2.5px;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .services-grid,
+      .process-grid,
+      .feedback-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-media img,
+      .project-media video {
+        height: 240px;
+      }
+
+      .project-content {
+        padding: 24px;
+      }
+
+      .project-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .ebook-card {
+        padding: 25px;
+        gap: 30px;
+      }
+
+      .cta-box {
+        padding: 55px 25px;
+      }
+
+      .cta-box h2 {
+        letter-spacing: -2px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .faq-question {
+        font-size: 0.93rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       NAVIGATION
+       ======================================================= -->
+
+  <header>
+    <div class="container navbar">
+
+      <a href="#home" class="brand">
+
+        <img
+          src="assets/creative-mindz-logo.jpg"
+          alt="Creative Mindz logo"
+          class="brand-logo"
+        />
+
+        <div class="brand-name">
+          Creative <span>Mindz</span>
+        </div>
+
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open navigation"
+      >
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+
+        <li>
+          <a href="#services">Services</a>
+        </li>
+
+        <li>
+          <a href="#work">Work</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#process">Process</a>
+        </li>
+
+        <li>
+          <a href="#faq">FAQs</a>
+        </li>
+
+        <li>
+          <a href="#contact" class="nav-cta">
+            Let's Create
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </header>
+
+
+  <!-- =======================================================
+       MAIN
+       ======================================================= -->
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <img
+            src="assets/creative-mindz-logo.jpg"
+            alt="Creative Mindz"
+            class="hero-logo"
+          />
+
+          <div class="eyebrow">
+            AI Creative Content & Visual Storytelling
+          </div>
+
+          <h1>
+            Your product deserves
+            <span class="blue">more</span>
+            than another
+            <span class="gold">ordinary</span>
+            advertisement.
+          </h1>
+
+          <p class="hero-description">
+            Creative Mindz helps brands get noticed and remembered by
+            turning products, ideas, and brands into engaging visual stories
+            using AI-powered visuals, animation, voiceovers, and creative
+            storytelling.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#work" class="btn btn-primary">
+              See What We've Created →
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+              Bring Your Idea to Life
+            </a>
+
+          </div>
+
+          <p class="hero-note">
+            AI is the tool. Creativity is the direction.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+         ===================================================== -->
+
+    <section id="services">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            What We Can Create
+          </div>
+
+          <h2>
+            Creative content built around your idea.
+          </h2>
+
+          <p>
+            We combine creative direction with AI-powered tools to explore
+            new ways of presenting products, brands, and ideas.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card">
+
+            <div class="service-number">
+              01
+            </div>
+
+            <h3>
+              AI Video Advertising
+            </h3>
+
+            <h4>
+              Turn your product into a story worth watching.
+            </h4>
+
+            <p>
+              Short-form advertisements combining visuals, animation,
+              voiceover, storytelling, and creative direction.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              02
+            </div>
+
+            <h3>
+              AI Visual Content
+            </h3>
+
+            <h4>
+              Give your product a visual identity people remember.
+            </h4>
+
+            <p>
+              Creative AI-generated visuals designed around your product,
+              brand, message, and desired audience.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              03
+            </div>
+
+            <h3>
+              AI Animation
+            </h3>
+
+            <h4>
+              Bring your ideas to life.
+            </h4>
+
+            <p>
+              Animated scenes and visual concepts created to make your
+              message more engaging and expressive.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              04
+            </div>
+
+            <h3>
+              Voiceover & Storytelling
+            </h3>
+
+            <h4>
+              Don't just tell them. Make them feel the story.
+            </h4>
+
+            <p>
+              Voiceover, spoken-word, and storytelling designed to give
+              your brand character and personality.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              05
+            </div>
+
+            <h3>
+              Spoken-Word Advertising
+            </h3>
+
+            <h4>
+              Give your message a voice with personality.
+            </h4>
+
+            <p>
+              Poetry-inspired advertising concepts where rhythm, language,
+              and meaning become part of the creative.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="service-number">
+              06
+            </div>
+
+            <h3>
+              Creative Brand Storytelling
+            </h3>
+
+            <h4>
+              Make the message feel like more than a message.
+            </h4>
+
+            <p>
+              Creative concepts that connect the product, its value,
+              and its audience through a clear narrative.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJECTS
+         ===================================================== -->
+
+    <section class="projects" id="work">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            What We've Created
+          </div>
+
+          <h2>
+            Ideas turned into creative experiments.
+          </h2>
+
+          <p>
+            A selection of personal and speculative projects created to
+            explore AI-powered advertising, storytelling, visual direction,
+            and creative production.
+          </p>
+
+        </div>
+
+
+        <div class="project-grid">
+
+
+          <!-- =================================================
+               UBEWU PROJECT
+               ================================================= -->
+
+          <article class="project-card">
+
+            <div class="project-media">
+
+              <img
+                src="assets/ubewu-cover.jpg"
+                alt="UBEWU KULTURE fashion project"
+              />
+
+              <div class="media-label">
+                Project Image
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-type">
+                  Fashion × Spoken Word
+                </span>
+
+                <span class="project-status">
+                  Personal Project
+                </span>
+
+              </div>
+
+              <h3>
+                UBEWU KULTURE
+              </h3>
+
+              <h4>
+                AI Fashion Advertisement
+              </h4>
+
+              <p>
+                An AI-powered fashion advertisement built around
+                craftsmanship, Nigerian tailoring, premium style, and
+                spoken-word creative direction. The concept turns the
+                tailor's work into a visual story focused on creativity,
+                precision, craftsmanship, and clothing made for kings.
+              </p>
+
+              <div class="project-tools">
+
+                <span>AI Visuals</span>
+                <span>Animation</span>
+                <span>Spoken Word</span>
+                <span>Voiceover</span>
+                <span>Editing</span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- =================================================
+               PURPLE MOUTHWASH PROJECT
+               ================================================= -->
+
+          <article class="project-card">
+
+            <div class="project-media">
+
+              <img
+                src="assets/purple-mouthwash-cover.jpg"
+                alt="Purple Mouthwash advertisement project"
+              />
+
+              <div class="media-label">
+                Project Image
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-type">
+                  Beauty × Product
+                </span>
+
+                <span class="project-status">
+                  Personal Project
+                </span>
+
+              </div>
+
+              <h3>
+                Purple Mouthwash
+              </h3>
+
+              <h4>
+                AI Product Advertisement
+              </h4>
+
+              <p>
+                A product advertisement built around a fresh, elegant
+                morning routine. The concept combines realistic AI visuals,
+                animation, product presentation, lifestyle storytelling,
+                and a calm female voiceover.
+              </p>
+
+              <div class="project-tools">
+
+                <span>AI Visuals</span>
+                <span>Animation</span>
+                <span>Product Storytelling</span>
+                <span>Voiceover</span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- =================================================
+               UBEWU VIDEO
+               ================================================= -->
+
+          <article class="project-card">
+
+            <div class="project-media">
+
+              <video
+                controls
+                preload="metadata"
+                playsinline
+              >
+                <source
+                  src="assets/ubewu-animation.mp4"
+                  type="video/mp4"
+                />
+
+                Your browser does not support video playback.
+              </video>
+
+              <div class="media-label">
+                Watch Project
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-type">
+                  Fashion Advertisement
+                </span>
+
+                <span class="project-status">
+                  Personal Project
+                </span>
+
+              </div>
+
+              <h3>
+                UBEWU KULTURE — Animation
+              </h3>
+
+              <h4>
+                Visual Advertising Experiment
+              </h4>
+
+              <p>
+                Watch the completed UBEWU KULTURE creative advertisement,
+                combining AI-generated visuals, animation, spoken-word
+                writing, voiceover, and editing.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- =================================================
+               PURPLE MOUTHWASH VIDEO
+               ================================================= -->
+
+          <article class="project-card">
+
+            <div class="project-media">
+
+              <video
+                controls
+                preload="metadata"
+                playsinline
+              >
+                <source
+                  src="assets/purple-mouthwash-animation.mp4"
+                  type="video/mp4"
+                />
+
+                Your browser does not support video playback.
+              </video>
+
+              <div class="media-label">
+                Watch Project
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-type">
+                  Product Advertisement
+                </span>
+
+                <span class="project-status">
+                  Personal Project
+                </span>
+
+              </div>
+
+              <h3>
+                Purple Mouthwash — Animation
+              </h3>
+
+              <h4>
+                AI Product Advertising Experiment
+              </h4>
+
+              <p>
+                Watch the completed Purple Mouthwash advertisement,
+                developed around product presentation, lifestyle visuals,
+                animation, storytelling, and voiceover.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- =================================================
+               YOUTUBE VIDEO
+               ================================================= -->
+
+          <article class="project-card full">
+
+            <div class="project-media">
+
+              <video
+                controls
+                preload="metadata"
+                playsinline
+              >
+                <source
+                  src="assets/youtube-animation.mp4"
+                  type="video/mp4"
+                />
+
+                Your browser does not support video playback.
+              </video>
+
+              <div class="media-label">
+                Watch Story
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <div class="project-top">
+
+                <span class="project-type">
+                  Storytelling × Creator
+                </span>
+
+                <span class="project-status">
+                  Personal Project
+                </span>
+
+              </div>
+
+              <h3>
+                My First YouTube Animation
+              </h3>
+
+              <h4>
+                AI Storytelling Film
+              </h4>
+
+              <p>
+                A personal storytelling animation about a young writer
+                creating a book and beginning a journey of creative work.
+                The project explores how AI can support storytelling while
+                introducing the person behind the creative work.
+              </p>
+
+              <div class="project-tools">
+
+                <span>Storytelling</span>
+                <span>AI Visuals</span>
+                <span>Concept Development</span>
+                <span>Editing</span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EBOOK
+         ===================================================== -->
+
+    <section class="ebook-section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            More of What I Create
+          </div>
+
+          <h2>
+            Creative work beyond advertising.
+          </h2>
+
+          <p>
+            Creative Mindz also explores writing, editing, design, and
+            digital publishing.
+          </p>
+
+        </div>
+
+
+        <div class="ebook-card">
+
+          <div>
+
+            <img
+              src="assets/ebook-cover.jpg"
+              alt="Consistent Practical Ways to Make Money Online guide"
+              class="ebook-cover"
+            />
+
+          </div>
+
+
+          <div class="ebook-content">
+
+            <div class="section-label">
+              Editing & Design Project
+            </div>
+
+            <h3>
+              Consistent Practical Ways to Make Money Online in 2026
+            </h3>
+
+            <p class="ebook-credit">
+              Edited & designed by David
+            </p>
+
+            <p>
+              A digital publishing project focused on presenting practical
+              information in a clear and accessible format. This project
+              reflects another side of my creative work: editing, organizing,
+              designing, and packaging ideas for an audience.
+            </p>
+
+            <a
+              href="https://selar.com/6xye454811"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary selar-btn"
+            >
+              View on Selar →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT DAVID
+         ===================================================== -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div>
+
+            <img
+              src="assets/creative-mindz-logo.jpg"
+              alt="Creative Mindz logo"
+              class="about-logo"
+            />
+
+          </div>
+
+
+          <div class="about-content">
+
+            <div class="section-label">
+              The Creator
+            </div>
+
+            <h2>
+              Hi, I'm <span>David.</span>
+            </h2>
+
+            <p>
+              I'm the creator behind Creative Mindz, focused on turning ideas
+              into engaging visual stories.
+            </p>
+
+            <p>
+              I combine writing, spoken-word creativity, storytelling,
+              AI tools, voiceovers, and advertising concepts to explore new
+              ways brands can communicate.
+            </p>
+
+            <p>
+              I'm still building and developing my creative direction,
+              one idea, one project, and one experiment at a time.
+            </p>
+
+            <div class="about-signature">
+              David —
+              <span>AI Creative Content Creator</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROCESS
+         ===================================================== -->
+
+    <section id="process">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            How We Work
+          </div>
+
+          <h2>
+            Your vision stays at the centre.
+          </h2>
+
+          <p>
+            The process is collaborative. Your idea provides the direction;
+            creative thinking and AI-powered tools help shape it into the
+            final piece.
+          </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+          <article class="process-step">
+
+            <div class="process-step-number">
+              01 / UNDERSTAND
+            </div>
+
+            <h3>
+              Listen first.
+            </h3>
+
+            <p>
+              We learn about your product, audience, goal, message,
+              preferences, and the problem you want the creative to address.
+            </p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <div class="process-step-number">
+              02 / SHAPE
+            </div>
+
+            <h3>
+              Build the idea.
+            </h3>
+
+            <p>
+              We explore visuals, colours, people, setting, voice, tone,
+              storytelling, and the overall creative direction.
+            </p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <div class="process-step-number">
+              03 / CREATE
+            </div>
+
+            <h3>
+              Make it real.
+            </h3>
+
+            <p>
+              We bring the concept together through visuals, animation,
+              voiceover, storytelling, and editing.
+            </p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <div class="process-step-number">
+              04 / REFINE
+            </div>
+
+            <h3>
+              Improve together.
+            </h3>
+
+            <p>
+              Your feedback matters. We review the work, make corrections,
+              and adjust the creative where necessary.
+            </p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <div class="process-step-number">
+              05 / DELIVER
+            </div>
+
+            <h3>
+              Finish strong.
+            </h3>
+
+            <p>
+              The final creative piece is prepared for its intended use
+              and delivered to you.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FEEDBACK
+         ===================================================== -->
+
+    <section class="feedback-section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            Feedback
+          </div>
+
+          <h2>
+            What people can say about the work.
+          </h2>
+
+          <p class="feedback-note">
+            This section is ready for genuine feedback from people who
+            experience your work. The examples below are clearly marked
+            as placeholders and are not presented as real client reviews.
+          </p>
+
+        </div>
+
+
+        <div class="feedback-grid">
+
+          <article class="feedback-card">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “Creative work that combines a strong idea with interesting
+              visual storytelling.”
+            </p>
+
+            <div class="feedback-author">
+              <strong>Sample Feedback</strong> — Replace with real feedback
+            </div>
+
+          </article>
+
+
+          <article class="feedback-card">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “A creative approach that makes the project worth watching
+              and exploring.”
+            </p>
+
+            <div class="feedback-author">
+              <strong>Sample Feedback</strong> — Replace with real feedback
+            </div>
+
+          </article>
+
+
+          <article class="feedback-card">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              “An interesting combination of AI visuals, storytelling,
+              voice, and creative direction.”
+            </p>
+
+            <div class="feedback-author">
+              <strong>Sample Feedback</strong> — Replace with real feedback
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <div class="feedback-form-box">
+
+          <h3>
+            Want to leave feedback?
+          </h3>
+
+          <p>
+            Real feedback can be added here as you begin working with
+            people and brands.
+          </p>
+
+          <a
+            href="https://wa.me/2349025582104?text=Hi%20David%2C%20I%27d%20like%20to%20leave%20feedback%20about%20your%20work."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            Send Feedback on WhatsApp →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ
+         ===================================================== -->
+
+    <section id="faq">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            Frequently Asked Questions
+          </div>
+
+          <h2>
+            Questions you may have.
+          </h2>
+
+          <p>
+            A few simple answers before we start creating.
+          </p>
+
+        </div>
+
+
+        <div class="faq-list">
+
+
+          <div class="faq-item">
+
+            <button class="faq-question">
+
+              <span>
+                What does Creative Mindz create?
+              </span>
+
+              <span class="faq-icon">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Creative Mindz focuses on AI-powered video advertising,
+                visual content, animation, voiceovers, spoken-word
+                advertising, and creative brand storytelling.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <button class="faq-question">
+
+              <span>
+                Can you work with small businesses?
+              </span>
+
+              <span class="faq-icon">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Yes. Creative Mindz is being built to work with businesses,
+                brands, startups, personal brands, and other creators who
+                want to communicate their ideas through creative content.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <button class="faq-question">
+
+              <span>
+                Do I need to provide everything for my advertisement?
+              </span>
+
+              <span class="faq-icon">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Not necessarily. We can discuss what you already have,
+                what you need, and what can be developed creatively around
+                your product or idea.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <button class="faq-question">
+
+              <span>
+                Can I request changes to the creative?
+              </span>
+
+              <span class="faq-icon">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Yes. The process is collaborative. Your feedback helps
+                shape the creative direction and refine the final piece.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <button class="faq-question">
+
+              <span>
+                Do you use AI to create the content?
+              </span>
+
+              <span class="faq-icon">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                Yes. AI is part of the creative workflow, alongside
+                storytelling, writing, visual direction, voiceover,
+                editing, and human creative decisions.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item">
+
+            <button class="faq-question">
+
+              <span>
+                How can I contact David?
+              </span>
+
+              <span class="faq-icon">
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+              <p>
+                You can contact David directly through WhatsApp using the
+                contact button at the bottom of this portfolio.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL CTA
+         ===================================================== -->
+
+    <section class="cta" id="contact">
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div class="section-label">
+            Let's Create
+          </div>
+
+          <h2>
+            Have an idea?
+            Let's turn it into something worth seeing.
+          </h2>
+
+          <p>
+            Tell me about your product, brand, or creative idea.
+            We can start with the problem, explore the possibilities,
+            and shape the content around what you want to communicate.
+          </p>
+
+
+          <!--
+            WhatsApp number:
+            +234 902 558 2104
+
+            WhatsApp links use:
+            2349025582104
+
+            No +, spaces, or first 0.
+          -->
+
+          <a
+            href="https://wa.me/2349025582104?text=Hi%20David%2C%20I%27m%20the%20creator%20behind%20Creative%20Mindz."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn whatsapp-btn"
+          >
+            Message David on WhatsApp →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        Creative <span>Mindz</span>
+      </div>
+
+      <div class="footer-text">
+        AI Creative Content & Visual Storytelling
+      </div>
+
+      <div class="footer-text">
+        © 2026 Creative Mindz. Created by David.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
+
+  <script>
+
+    /* ================================
+       MOBILE NAVIGATION
+       ================================ */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+
+      navLinks.classList.toggle("active");
+
+      if (navLinks.classList.contains("active")) {
+        menuBtn.textContent = "✕";
+        menuBtn.setAttribute("aria-label", "Close navigation");
+      } else {
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-label", "Open navigation");
+      }
+
+    });
+
+
+    /* ================================
+       CLOSE MOBILE MENU
+       ================================ */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+        menuBtn.textContent = "☰";
+        menuBtn.setAttribute("aria-label", "Open navigation");
+
+      });
+
+    });
+
+
+    /* ================================
+       FAQ ACCORDION
+       ================================ */
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+
+      const question = item.querySelector(".faq-question");
+      const answer = item.querySelector(".faq-answer");
+
+      question.addEventListener("click", () => {
+
+        const isActive = item.classList.contains("active");
+
+        /* Close every FAQ first */
+
+        faqItems.forEach(otherItem => {
+
+          otherItem.classList.remove("active");
+
+          const otherAnswer =
+            otherItem.querySelector(".faq-answer");
+
+          otherAnswer.style.maxHeight = null;
+
+        });
+
+
+        /* Open clicked FAQ */
+
+        if (!isActive) {
+
+          item.classList.add("active");
+
+          answer.style.maxHeight =
+            answer.scrollHeight + "px";
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
